@@ -20,22 +20,59 @@
     <meta name="twitter:description" content="A custom-built library of purpose and Kingdom wisdom — made for the most beautiful woman I've ever laid eyes on.">
     <meta name="twitter:image" content="/icons/social-preview.jpg">
 
-    <!-- Styles -->
     <link rel="stylesheet" href="/css/style.css">
 
-    <!-- Background -->
     <style>
         body {
             background: url('/img/kingdom.jpg') no-repeat center center fixed;
             background-size: cover;
+            color: silver;
+            overflow-x: hidden;
+        }
+
+        /* Dark translucent blocks behind titles */
+        header, .featured-block, .spotlight, .quick-categories h2, .top-picks h2 {
+            background: rgba(0, 0, 0, 0.55);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+        }
+
+        /* Silver snow animation */
+        .snowflake {
+            position: fixed;
+            top: -10px;
+            color: silver;
+            font-size: 14px;
+            opacity: 0.8;
+            pointer-events: none;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-10px); }
+            100% { transform: translateY(110vh); }
         }
     </style>
 </head>
 
 <body>
 
+<!-- Silver Snow Generator -->
+<script>
+    for (let i = 0; i < 60; i++) {
+        let snow = document.createElement("div");
+        snow.className = "snowflake";
+        snow.innerHTML = "✦";
+        snow.style.left = Math.random() * 100 + "vw";
+        snow.style.animationDuration = 4 + Math.random() * 6 + "s";
+        snow.style.animationDelay = Math.random() * 5 + "s";
+        document.body.appendChild(snow);
+    }
+</script>
+
 <header>
-    <h1>Hi Jackie</h1>
+    <h1>The Beautiful Jackie</h1>
     <p class="subtitle">Your Daily Purpose & Wisdom</p>
 </header>
 
