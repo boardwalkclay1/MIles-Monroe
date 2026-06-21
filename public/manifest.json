@@ -1,0 +1,33 @@
+{
+  "name": "Jackie's Wisdom App",
+  "short_name": "Jackie",
+  "description": "A personal library of purpose, leadership, Kingdom wisdom, and love — created for the most beautiful woman I've ever laid eyes on.",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icons/jackie-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/jackie-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": [
+    "education",
+    "books",
+    "lifestyle",
+    "spirituality"
+  ],
+  "lang": "en-US",
+  "dir": "ltr"
+}
