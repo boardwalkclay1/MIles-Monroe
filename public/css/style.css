@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    font-family: serif;
+    background: #000;
+    color: silver;
+}
+
+header {
+    text-align: center;
+    padding: 30px 10px;
+    border-bottom: 1px solid silver;
+}
+
+.subtitle {
+    color: #c00;
+}
+
+.home-buttons, .content {
+    display: grid;
+    gap: 20px;
+    padding: 30px;
+}
+
+.btn, .card {
+    padding: 20px;
+    background: #111;
+    border: 1px solid silver;
+    border-radius: 8px;
+    text-align: center;
+    color: silver;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.btn:hover, .card:hover {
+    border-color: #c00;
+    color: #c00;
+}
+
+.reading-mode {
+    background: #000;
+}
+
+.reading-content {
+    padding: 30px;
+    line-height: 1.8;
+    font-size: 20px;
+}
