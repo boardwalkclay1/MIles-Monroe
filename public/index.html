@@ -13,7 +13,7 @@
     <meta property="og:description" content="Created for the most beautiful woman I've ever laid eyes on — a world of purpose, wisdom, and Kingdom insight.">
     <meta property="og:image" content="/img/clays-gift.jpg">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://miles-monroe.pages.dev//">
+    <meta property="og:url" content="https://miles-monroe.pages.dev/">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Jackie's Wisdom App">
@@ -22,23 +22,73 @@
 
     <link rel="stylesheet" href="/css/style.css">
 
+    <!-- Medieval Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&family=Cardo:wght@400;700&display=swap" rel="stylesheet">
+
     <style>
         body {
             background: url('/img/kingdom.jpg') no-repeat center center fixed;
             background-size: cover;
             color: silver;
             overflow-x: hidden;
+            font-family: 'Cardo', serif;
         }
 
-        /* Dark translucent blocks behind titles */
+        h1, h2, .subtitle {
+            font-family: 'Uncial Antiqua', serif;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px black, 0 0 20px #000;
+        }
+
         header, .featured-block, .spotlight, .quick-categories h2, .top-picks h2 {
             background: rgba(0, 0, 0, 0.55);
             padding: 20px;
-            border-radius: 10px;
+            border-radius: 12px;
             margin: 20px;
+            border: 1px solid rgba(255, 215, 0, 0.25);
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
         }
 
-        /* Silver snow animation */
+        .btn {
+            display: block;
+            margin: 12px auto;
+            width: 80%;
+            text-align: center;
+            padding: 14px;
+            background: rgba(0, 0, 0, 0.65);
+            border: 1px solid gold;
+            border-radius: 10px;
+            color: gold;
+            font-family: 'Uncial Antiqua', serif;
+            font-size: 20px;
+            text-shadow: 0 0 8px black;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: rgba(255, 215, 0, 0.2);
+            transform: scale(1.03);
+        }
+
+        .grid .card {
+            background: rgba(0, 0, 0, 0.55);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-family: 'Uncial Antiqua', serif;
+            font-size: 22px;
+            color: gold;
+            text-shadow: 0 0 8px black;
+            transition: 0.3s;
+        }
+
+        .grid .card:hover {
+            background: rgba(255, 215, 0, 0.15);
+            transform: scale(1.05);
+        }
+
+        /* Silver Snow Animation */
         .snowflake {
             position: fixed;
             top: -10px;
@@ -47,11 +97,12 @@
             opacity: 0.8;
             pointer-events: none;
             animation: fall linear infinite;
+            text-shadow: 0 0 8px white;
         }
 
         @keyframes fall {
-            0% { transform: translateY(-10px); }
-            100% { transform: translateY(110vh); }
+            0% { transform: translateY(-10px) rotate(0deg); }
+            100% { transform: translateY(110vh) rotate(360deg); }
         }
     </style>
 </head>
