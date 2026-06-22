@@ -1,6 +1,12 @@
-// Rich category objects for Miles Munroe’s teachings
+// ===============================
+// Miles Munroe Library System
+// Fully Functional + Clickable
+// ===============================
+
+// Category data
 const libraryCategories = [
     {
+        id: "purpose",
         name: "Purpose",
         description: "Discover why you were created and what problem you were born to solve.",
         keyIdeas: [
@@ -14,6 +20,7 @@ const libraryCategories = [
         ]
     },
     {
+        id: "leadership",
         name: "Leadership",
         description: "Learn how leadership is influence and how to lead from your true identity.",
         keyIdeas: [
@@ -27,6 +34,7 @@ const libraryCategories = [
         ]
     },
     {
+        id: "kingdom",
         name: "Kingdom Living",
         description: "Explore the concept of God’s Kingdom and how it changes your view of life.",
         keyIdeas: [
@@ -40,6 +48,7 @@ const libraryCategories = [
         ]
     },
     {
+        id: "relationships",
         name: "Relationships",
         description: "Wisdom for friendships, marriage, and covenant relationships.",
         keyIdeas: [
@@ -53,6 +62,7 @@ const libraryCategories = [
         ]
     },
     {
+        id: "vision",
         name: "Vision",
         description: "Understand how vision gives direction and discipline to your life.",
         keyIdeas: [
@@ -65,6 +75,7 @@ const libraryCategories = [
         ]
     },
     {
+        id: "identity",
         name: "Identity",
         description: "Know who you are beyond titles, roles, and expectations.",
         keyIdeas: [
@@ -78,6 +89,7 @@ const libraryCategories = [
         ]
     },
     {
+        id: "potential",
         name: "Potential",
         description: "Unlock the abilities and gifts placed inside you.",
         keyIdeas: [
@@ -90,6 +102,7 @@ const libraryCategories = [
         ]
     },
     {
+        id: "authority",
         name: "Spiritual Authority",
         description: "Learn how to walk in authority without arrogance.",
         keyIdeas: [
@@ -103,22 +116,39 @@ const libraryCategories = [
     }
 ];
 
+// Render library grid
 const libraryGrid = document.getElementById("libraryGrid");
 
 if (libraryGrid) {
     libraryGrid.innerHTML = "";
+
     libraryCategories.forEach(cat => {
         const div = document.createElement("div");
         div.className = "card";
+
         div.innerHTML = `
-            <strong>${cat.name}</strong><br>
+            <strong>${cat.name}</strong>
             <p>${cat.description}</p>
+
             <ul>
                 ${cat.keyIdeas.map(i => `<li>${i}</li>`).join("")}
             </ul>
+
             <p><em>Suggested reading:</em> ${cat.suggestedBooks.join(", ")}</p>
-            <button class="btn small">Start Reading</button>
+
+            <button class="btn small" data-topic="${cat.id}">
+                Start Reading
+            </button>
         `;
+
         libraryGrid.appendChild(div);
+    });
+
+    // Attach click events
+    document.querySelectorAll(".btn.small").forEach(btn => {
+        btn.addEventListener("click", () => {
+            const topic = btn.getAttribute("data-topic");
+            window.location.href = `/pages/read.html?topic=${topic}`;
+        });
     });
 }
