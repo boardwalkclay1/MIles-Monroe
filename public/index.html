@@ -70,6 +70,13 @@
             transform: scale(1.03);
         }
 
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px;
+        }
+
         .grid .card {
             background: rgba(0, 0, 0, 0.55);
             border: 1px solid rgba(255, 215, 0, 0.3);
@@ -81,6 +88,7 @@
             color: gold;
             text-shadow: 0 0 8px black;
             transition: 0.3s;
+            cursor: pointer;
         }
 
         .grid .card:hover {
@@ -148,12 +156,12 @@
 <section class="quick-categories">
     <h2>Explore Topics</h2>
     <div class="grid">
-        <div class="card">Purpose</div>
-        <div class="card">Leadership</div>
-        <div class="card">Kingdom</div>
-        <div class="card">Relationships</div>
-        <div class="card">Identity</div>
-        <div class="card">Vision</div>
+        <div class="card" data-topic="Purpose">Purpose</div>
+        <div class="card" data-topic="Leadership">Leadership</div>
+        <div class="card" data-topic="Kingdom">Kingdom</div>
+        <div class="card" data-topic="Relationships">Relationships</div>
+        <div class="card" data-topic="Identity">Identity</div>
+        <div class="card" data-topic="Vision">Vision</div>
     </div>
 </section>
 
