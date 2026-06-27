@@ -282,3 +282,74 @@ function loadQuote() {
     let q = arr[Math.floor(Math.random() * arr.length)];
 
     if (arr.length > 1 && q.text === lastQuote &&
+
+            if (arr.length > 1 && q.text === lastQuote && cat === lastCategory) {
+        // pick a different quote to avoid repeats
+        let idx = arr.indexOf(q);
+        q = arr[(idx + 1) % arr.length];
+    }
+
+    lastQuote = q.text;
+    lastCategory = cat;
+
+    renderQuote(q.text, cat);
+    saveHistory(q.text, cat);
+}
+
+// =========================
+// SEARCH ENGINE
+// =========================
+
+function searchQuotes(term) {
+    term = term.toLowerCase();
+    const results = [];
+
+    Object.keys(quotes).forEach(cat => {
+        quotes[cat].forEach(q => {
+            if (q.text.toLowerCase().includes(term)) {
+                results.push({ text: q.text, category: cat });
+            }
+        });
+    });
+
+    return results;
+}
+
+if (searchInput) {
+    searchInput.addEventListener("input", () => {
+        const term = searchInput.value.trim();
+        if (term.length < 2) return;
+
+        const results = searchQuotes(term);
+
+        if (results.length === 0) {
+            quoteDisplay.innerText = "No matching quotes found.";
+            return;
+        }
+
+        const pick = results[Math.floor(Math.random() * results.length)];
+        renderQuote(pick.text, pick.category);
+    });
+}
+
+// =========================
+// INIT
+// =========================
+
+function initQuotePage() {
+    if (!quoteFilter || !quoteDisplay || !newQuoteBtn) return;
+
+    // Load category from Explore section if set
+    const selectedTopic = localStorage.getItem("selectedTopic");
+    if (selectedTopic && quotes[selectedTopic]) {
+        quoteFilter.value = selectedTopic;
+        localStorage.removeItem("selectedTopic");
+    }
+
+    loadQuote();
+}
+
+newQuoteBtn && newQuoteBtn.addEventListener("click", loadQuote);
+
+initQuotePage();
+
