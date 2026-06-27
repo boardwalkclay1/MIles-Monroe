@@ -49,6 +49,16 @@
             box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
         }
 
+        /* NEW BLACK BLOCK WRAPPERS */
+        .block {
+            background: rgba(0, 0, 0, 0.55);
+            padding: 20px;
+            margin: 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 215, 0, 0.25);
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
+        }
+
         .btn {
             display: block;
             margin: 12px auto;
@@ -74,7 +84,7 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 15px;
-            margin: 20px;
+            margin-top: 10px;
         }
 
         .grid .card {
@@ -140,12 +150,15 @@
     <p id="featuredQuote">Loading...</p>
 </section>
 
-<section class="home-buttons">
-    <a href="/pages/library.html" class="btn">Miles Munroe Library</a>
-    <a href="/pages/authors.html" class="btn">Similar Authors</a>
-    <a href="/pages/quotes.html" class="btn">Quotes</a>
-    <a href="/pages/daily.html" class="btn">Daily Purpose Drop</a>
-    <a href="/pages/reading.html" class="btn">Reading Mode</a>
+<!-- BLACK BLOCK ADDED -->
+<section class="block">
+    <div class="home-buttons">
+        <a href="/pages/library.html" class="btn">Miles Munroe Library</a>
+        <a href="/pages/authors.html" class="btn">Similar Authors</a>
+        <a href="/pages/quotes.html" class="btn">Quotes</a>
+        <a href="/pages/daily.html" class="btn">Daily Purpose Drop</a>
+        <a href="/pages/reading.html" class="btn">Reading Mode</a>
+    </div>
 </section>
 
 <section class="spotlight">
@@ -153,7 +166,8 @@
     <p id="spotlightText">Loading...</p>
 </section>
 
-<section class="quick-categories">
+<!-- BLACK BLOCK ADDED -->
+<section class="block quick-categories">
     <h2>Explore Topics</h2>
     <div class="grid">
         <div class="card" data-topic="Purpose">Purpose</div>
@@ -165,7 +179,8 @@
     </div>
 </section>
 
-<section class="top-picks">
+<!-- BLACK BLOCK ADDED -->
+<section class="block top-picks">
     <h2>Top Picks For You</h2>
     <ul id="topPicksList"></ul>
 </section>
